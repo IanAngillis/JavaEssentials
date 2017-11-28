@@ -5,10 +5,15 @@ public class PersoonApp {
 	public static void main(String[] args) {
 		Persoon p1 = new Persoon();
 		
-		p1.
+		p1.setGeboortejaar(1997);
+		p1.setGewicht(75);
+		p1.setLengte(1.66);
+		p1.setNaam("Angillis");
+		p1.setVoornaam("Ian");
 		
-		System.out.println("Volledige naam: " + p1.voornaam + " " + p1.naam);
+		String test = p1.toString();
 		
+		System.out.println(test);
 		
 	}
 

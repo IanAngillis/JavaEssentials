@@ -8,8 +8,8 @@ public class Persoon {
 	private double gewicht;
 
 	public String toString() {
-		return "Deze persoon is " + this.getVoornaam() + " " + this.getNaam() + "\n gewicht \t :" + this.getGewicht()
-				+ "\n Lengte \t : " + this.getLengte() + "\ngeboortejaar \t :" + this.getGeboortejaar();
+		return "Deze persoon is " + this.getVoornaam() + " " + this.getNaam() + "\ngewicht \t :" + this.getGewicht()
+				+ "\nLengte \t\t :" + this.getLengte() + "\ngeboortejaar \t :" + this.getGeboortejaar();
 	}
 
 	// Getters
