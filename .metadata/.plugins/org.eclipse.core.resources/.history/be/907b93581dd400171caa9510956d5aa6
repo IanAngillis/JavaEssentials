@@ -1,0 +1,45 @@
+package opdracht;
+
+public class RectApp {
+
+	public static void main(String[] args) {
+
+		System.out.println("This program uses a rectangle");
+		Rectangle rect = new Rectangle();
+
+		System.out.println("Height: " + rect.height);
+		System.out.println("Width: " + rect.width);
+		System.out.println("Position: " + "(" + rect.x + "," + rect.y + ")");
+		System.out.println();
+
+		// Declare explicit value
+		rect.x = 1;
+		rect.y = 2;
+		rect.height = 20;
+		rect.width = 50;
+
+		System.out.println("Information rectangle 1:");
+		System.out.println("Height: " + rect.height);
+		System.out.println("Height: " + rect.width);
+		System.out.println("Position: " + "(" + rect.x + "," + rect.y + ")");
+		System.out.println();
+
+		Rectangle rect2 = new Rectangle();
+
+		rect2.x = 10;
+		rect2.y = 20;
+		rect2.height = 50;
+		rect2.width = 100;
+
+		System.out.println("Information rectangle 2:");
+		System.out.println("Height: " + rect2.height);
+		System.out.println("Height: " + rect2.width);
+		System.out.println("Position: " + "(" + rect2.x + "," + rect2.y + ")");
+		System.out.println();
+		
+		rect2.grow(30,  40);
+		System.out.println("Height: " + rect2.height);
+		System.out.println("Height: " + rect2.width);
+	}
+
+}

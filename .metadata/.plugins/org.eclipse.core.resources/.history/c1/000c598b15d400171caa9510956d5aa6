@@ -1,0 +1,14 @@
+package opdracht;
+
+public class Rectangle {
+
+	// Public: de variabelen zijn direct aanspreekbaar en aanpasbaar
+	// Private: de variabelen zijn nie tdirect aanspreekbaar
+	public int x;
+	private int y;
+	private int height;
+	private int width;
+
+	
+}
+

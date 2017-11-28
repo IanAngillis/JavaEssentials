@@ -1,0 +1,42 @@
+package be.pxl.h8.oef1;
+
+public class Persoon {
+	private String voornaam;
+	private String naam;
+	private double lengte;
+	private double gewicht;
+	
+	//Getters
+	public String getVoornaam() {
+		return this.voornaam;
+	}
+	
+	public String getNaam() {
+		return this.naam;
+	}
+	
+	public double getLengte() {
+		return this.lengte;
+	}
+	
+	public double getGewicht() {
+		return this.gewicht;
+	}
+	
+	//Setters
+	public void setVoornaam(String newVoornaam) {
+		this.voornaam = newVoornaam;
+	}
+	
+	public void setNaam(String newNaam) {
+		this.naam = newNaam;
+	}
+	
+	public void setLengte(double newLengte) {
+		this.lengte = newLengte;
+	}
+	
+	public void setGewicht(double newGewicht) {
+		this.gewicht = newGewicht;
+	}
+}

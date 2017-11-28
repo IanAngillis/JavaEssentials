@@ -1,0 +1,18 @@
+package be.pxl.h8.oef1;
+
+public class PersoonApp {
+
+	public static void main(String[] args) {
+		Persoon p1 = new Persoon();
+		
+		p1.voornaam = "Napoleon";
+		p1.naam = "Bonaparte";
+		p1.gewicht = 67;
+		p1.lengte = 1.66;
+		
+		System.out.println("Volledige naam: " + p1.voornaam + " " + p1.naam);
+		
+		
+	}
+
+}

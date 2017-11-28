@@ -1,0 +1,16 @@
+package opdracht;
+
+public class Rectangle {
+
+	public int x;
+	public int y;
+	public int height;
+	public int width;
+
+	// Main, maakt een rect object aan
+	public static void main(String[] args) {
+
+		System.out.println("This program uses a rectangle");
+		Rectangle rect = new Rectangle();
+	}
+}
