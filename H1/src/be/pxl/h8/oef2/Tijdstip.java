@@ -105,13 +105,13 @@ public class Tijdstip {
 
 	// Oefening 7
 	public String toStringTijd(boolean englishNotation) {
-		
+
 		StringBuilder temp = new StringBuilder("");
 		int uur = this.getUren();
 		int minuten = this.getMinuten();
 		String suffix = new String("");
-		
-		//Check notation
+
+		// Check notation
 		if (englishNotation) {
 			if (uur > 12) {
 				suffix = "PM";
@@ -119,63 +119,64 @@ public class Tijdstip {
 			} else {
 				suffix = "AM";
 			}
-			
+
 		} else {
 			suffix = "u";
 		}
-		
-		//Construct time to string
-		if(uur < 10) {
+
+		// Construct time to string
+		if (uur < 10) {
 			if (suffix.equals("u")) {
 				temp.append(uur + ":");
 			} else {
-			temp.append("0" + uur + ":");
+				temp.append("0" + uur + ":");
 			}
 		} else {
 			temp.append(uur + ":");
 		}
-		
-		if(minuten < 10) {
+
+		if (minuten < 10) {
 			temp.append("0" + minuten + " " + suffix);
 		} else {
 			temp.append(minuten + " " + suffix);
 		}
-		
+
 		if (temp.toString().equals("12:00 AM")) {
 			temp.append(" (noon)");
 		}
-		
-		if(temp.toString().equals("00:00 AM")) {
+
+		if (temp.toString().equals("00:00 AM")) {
 			return "12:00 PM (midnight)";
 		}
-		
+
 		return temp.toString();
 	}
-	
+
+	// Oefening 8
 	public String toStringTechnisch() {
 		StringBuilder temp = new StringBuilder("");
 		int uur = this.getUren();
 		int minuten = this.getMinuten();
 		int seconden = this.getSeconden();
-		
-		if(uur < 10) {
+
+		if (uur < 10) {
 			temp.append("0" + uur + ":");
 		} else {
 			temp.append(uur + ":");
 		}
-		
-		if(minuten < 10) {
+
+		if (minuten < 10) {
 			temp.append("0" + minuten + ":");
 		} else {
 			temp.append(minuten + ":");
 		}
-		
-		if(seconden < 10) {
+
+		if (seconden < 10) {
 			temp.append("0" + seconden);
 		} else {
 			temp.append(seconden);
 		}
-		
+
 		return temp.toString();
 	}
 }
