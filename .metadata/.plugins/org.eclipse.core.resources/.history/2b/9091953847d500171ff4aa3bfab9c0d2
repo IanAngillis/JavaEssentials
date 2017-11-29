@@ -151,7 +151,7 @@ public class Bankrekening {
 
 	}
 	
-	//opdracht 12 Schrijf bedrag argument over naar argumentrekening, dus opname bij this, stort bij r
+	//opdracht 10 Schrijf bedrag argument over naar argumentrekening, dus opname bij this, stort bij r
 	public void schrijfGeldOver(double bedrag, Bankrekening r) {
 		
 		if(this.rekeningBestaat() && r.rekeningBestaat()) {
