@@ -1,0 +1,32 @@
+package be.pxl.h8.oef2;
+
+public class Tijdstip {
+	private int uren;
+	private int minuten;
+	private int seconden;
+	
+	//Getters en Setters
+	//Getters Oefening 5
+	public int getUren() {
+		return this.uren;
+	}
+	
+	public int getMinuten() {
+		return this.minuten;
+	}
+	
+	public int getSeconden() {
+		return this.seconden;
+	}
+	
+	//Setters oefening 4
+	public void setUren(int nieuwUur) {
+		if(nieuwUur > 24) {
+			this.uren = (nieuwUur % 24);
+		} else if(nieuwUur == 24) {
+			this.uren = 0;
+		} else {
+			this.uren = nieuwUur;
+		}
+	}
+}

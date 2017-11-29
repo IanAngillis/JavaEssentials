@@ -1,0 +1,18 @@
+package be.pxl.h8.oef2;
+
+public class TijdstipApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Tijdstip t1 = new Tijdstip(1, 2, 3);
+		Tijdstip t2 = new Tijdstip(3665);
+		Tijdstip t3 = new Tijdstip(t2);
+		
+		System.out.println("Tijdstip 1");
+		System.out.println("Uren: " + t1.getUren());
+		System.out.println("Uren: " + t1.getMinuten());
+		System.out.println("Uren: " + t1.getUren());
+		
+	}
+
+}

@@ -14,6 +14,13 @@ public class PersoonApp {
 		String test = p1.toString();
 		
 		System.out.println(test);
+		System.out.println(p1.getBMI());
+		
+		test = p1.geefOmschrijving();
+		System.out.println(test);
+		
+		p1.voegVoornamenToe("Jan", "Ian", "Brecht");
+		System.out.println(p1.getVoornaam());
 		
 	}
 
