@@ -4,10 +4,10 @@ public class Klas {
 	
 	private String klasNaam;
 	private int aantalStudenten;
-	public static final int MAXSTUDENTEN;
+	public static int MAXSTUDENTEN;
 	public static int count = 0;
 	
-	static{
+	{
 		MAXSTUDENTEN = 40;
 		count++;
 	}
