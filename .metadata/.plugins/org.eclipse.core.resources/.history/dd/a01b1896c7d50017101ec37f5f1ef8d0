@@ -143,7 +143,7 @@ public class Bankrekening {
 
 			if (this.getNaam().equals("onbekend")) {
 				System.out.println("Het ziet er naar uit dat uw rekening nog niet op uw naam staat.");
-				System.out.println("We hebben u naam nodig voor we de verrichting kunnen uitvoeren.");
+				System.out.println("We hebben u naam nodig voor we de verrichting kunnen uitvoeren: ");
 				System.out.println("uw naam: ");
 				this.setNaam(keyboard.nextLine());
 				System.out.println("Uw naam is correct verwerkt in ons systeem");

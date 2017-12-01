@@ -68,41 +68,39 @@ public class Bankrekening {
 	// Opdracht 5
 	public void stort(double bedrag) {
 
-		if (!this.rekeningBestaat()) {
-			return;
-		}
-		// Extra controle op foutieve ingave
-		if (bedrag < 0) {
-			bedrag *= -1;
-		}
+		if (this.rekeningBestaat()) {
+			// Extra controle op foutieve ingave
+			if (bedrag < 0) {
+				bedrag *= -1;
+			}
 
-		this.setSaldo(this.getSaldo() + bedrag);
-		System.out.printf("na storting van %.2f euro\n", bedrag);
-		this.print();
+			this.setSaldo(this.getSaldo() + bedrag);
+			System.out.printf("na storting van %.2f euro\n", bedrag);
+			this.print();
 
+		}
 	}
 
 	// Opdracht 6
 	public void neemOp(double bedrag) {
 
-		if (!this.rekeningBestaat()) {
-			return;
-		}
-		if (bedrag < 0) {
-			bedrag *= -1;
-		}
+		if (this.rekeningBestaat()) {
+			if (bedrag < 0) {
+				bedrag *= -1;
+			}
 
-		if (this.getSaldo() == 0) {
-			System.out.println("u kan geen geld opnemen");
-		} else if (bedrag > this.getSaldo()) {
-			System.out.printf("u mag enkel %.2f opnemen\n", this.getSaldo());
-			System.out.printf("Na opname van %.2f euro\n", this.getSaldo());
-			this.setSaldo(0);
-			this.print();
-		} else {
-			this.setSaldo(this.getSaldo() - bedrag);
-			System.out.printf("Na opname van %.2f euro\n", bedrag);
-			this.print();
+			if (this.getSaldo() == 0) {
+				System.out.println("u kan geen geld opnemen");
+			} else if (bedrag > this.getSaldo()) {
+				System.out.printf("u mag enkel %.2f opnemen\n", this.getSaldo());
+				System.out.printf("Na opname van %.2f euro\n", this.getSaldo());
+				this.setSaldo(0);
+				this.print();
+			} else {
+				this.setSaldo(this.getSaldo() - bedrag);
+				System.out.printf("Na opname van %.2f euro\n", bedrag);
+				this.print();
+			}
 		}
 	}
 
@@ -143,7 +141,7 @@ public class Bankrekening {
 
 			if (this.getNaam().equals("onbekend")) {
 				System.out.println("Het ziet er naar uit dat uw rekening nog niet op uw naam staat.");
-				System.out.println("We hebben u naam nodig voor we de verrichting kunnen uitvoeren.");
+				System.out.println("We hebben u naam nodig voor we de verrichting kunnen uitvoeren: ");
 				System.out.println("uw naam: ");
 				this.setNaam(keyboard.nextLine());
 				System.out.println("Uw naam is correct verwerkt in ons systeem");
@@ -161,7 +159,7 @@ public class Bankrekening {
 			System.out.println("Overschrijven mislukt");
 			return;
 		}
-
+		
 		if (bedrag > this.getSaldo()) {
 			r.stort(this.getSaldo());
 			this.neemOp(bedrag);

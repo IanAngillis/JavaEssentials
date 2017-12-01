@@ -1,0 +1,12 @@
+package opdracht2;
+
+public class KlasApp {
+
+	public static void main(String[] args) {
+		Klas k = new Klas();
+		
+		System.out.println(Klas.MAXSTUDENTEN);
+		System.out.println(Klas.count);
+	}
+
+}
