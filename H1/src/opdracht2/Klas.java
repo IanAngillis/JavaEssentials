@@ -5,11 +5,12 @@ public class Klas {
 	private String klasNaam;
 	private int aantalStudenten;
 	public static final int MAXSTUDENTEN;
-	public static int count = 0;
+	private static int count = 0;
+	private static int totaalAantalStudenten = 0;
 	
 	static{
 		MAXSTUDENTEN = 40;
-		count++;
+		Klas.setCount(Klas.getCount() + 1);
 	}
 	
 	Klas(){
@@ -20,6 +21,22 @@ public class Klas {
 		
 		this.setKlasNaam(nieuwKlasNaam);
 		this.setAantalStudenten(nieuwAantalStudenten);
+	}
+	
+	public static void setTotaalAantalStudenten(int nieuwAantalStudenten) {
+		Klas.totaalAantalStudenten += nieuwAantalStudenten;
+	}
+	
+	public static int getTotaalAantalStudenten() {
+		return Klas.totaalAantalStudenten;
+	}
+	
+	public static int getCount() {
+		return Klas.count;
+	}
+	
+	public static void setCount(int nieuwCount) {
+		Klas.count = nieuwCount;
 	}
 	
 	public String getKlasNaam() {
@@ -38,6 +55,9 @@ public class Klas {
 		if(nieuwAantalStudenten > Klas.MAXSTUDENTEN) {
 			nieuwAantalStudenten = Klas.MAXSTUDENTEN;
 		}
+		
+		
+		Klas.setTotaalAantalStudenten(nieuwAantalStudenten - this.aantalStudenten);
 		this.aantalStudenten = nieuwAantalStudenten;
 	}
 	

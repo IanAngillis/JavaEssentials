@@ -8,7 +8,7 @@ public class Bankrekening {
 	private String naam;
 	private double saldo;
 	private double rentepercentage;
-
+	
 	// Opdracht 2
 	Bankrekening() {
 		this("geen", "onbekend", 0, 1.2);
