@@ -13,6 +13,7 @@ public class Game {
 	private final int ASTEROIDMAX = 15;
 	private int asteroidsOnTheField;
 	private int turn;
+	private int totalAsteroidsDestroyed = 0;
 
 	// Constructors
 	Game() {
@@ -50,13 +51,6 @@ public class Game {
 	}
 
 	// Setters
-	private void setAsteroidsOnTheField(int newAsteroidsOnTheField) {
-		if (newAsteroidsOnTheField < 0) {
-			newAsteroidsOnTheField = 0;
-		}
-
-		this.asteroidsOnTheField = newAsteroidsOnTheField;
-	}
 
 	private void setShipLocation(int newColumn) {
 		this.shipLocation = newColumn;
@@ -89,7 +83,7 @@ public class Game {
 
 			}
 			if (i == 0) {
-				System.out.print("  Points: " + this.getPoints());
+				System.out.print("  Points: " + this.getPoints() + " | Total Asteroids on the field: " + this.getAsteroidsOnTheField() + " | Total asteroids destroyed: " + this.totalAsteroidsDestroyed);
 			}
 			System.out.println();
 		}
@@ -156,6 +150,7 @@ public class Game {
 	private void updateAsteroids() {
 		int[] asteroidPositionsPreviousRow = new int[14];
 
+		asteroidPositionsPreviousRow = getAsteroidsPosition(9);
 		for (int i = 0; i < 9; i++) {
 			this.deleteAsteroids(this.getGameSpace().length - 1 - i);
 
@@ -191,13 +186,15 @@ public class Game {
 
 			if (random < 33) {
 
-				if (asteroidsOnCurrentRow < 3 && this.getAsteroidsOnTheField() <= this.ASTEROIDMAX) {
+				if (asteroidsOnCurrentRow < 3 && this.asteroidsOnTheField <= this.ASTEROIDMAX) {
 					this.getGameSpace()[0][i] = '*';
-					this.setAsteroidsOnTheField(this.getAsteroidsOnTheField() + 1);
 					asteroidsOnCurrentRow++;
 				}
 			}
 		}
+		
+		this.asteroidsOnTheField += asteroidsOnCurrentRow;
+		System.out.println(this.asteroidsOnTheField);
 	}
 
 	private void addAsteroidsToCurrentRow(int row, int[] asteroidPositions) {
@@ -223,6 +220,11 @@ public class Game {
 
 		for (int i = 0; i < 14; i++) {
 			if (this.getGameSpace()[row][i] == '*') {
+				if(row == 9) {
+					asteroidPositions[index] = i;
+					index++;
+					this.asteroidsOnTheField -= 1;
+				}
 				asteroidPositions[index] = i;
 				index++;
 			}
@@ -235,7 +237,6 @@ public class Game {
 		for (int i = 0; i < 14; i++) {
 			if (this.getGameSpace()[row][i] == '*') {
 				this.getGameSpace()[row][i] = ' ';
-				this.setAsteroidsOnTheField(this.getAsteroidsOnTheField() - 1);
 			}
 		}
 	}
@@ -247,6 +248,9 @@ public class Game {
 			if (this.gameSpace[10 - 1 - i][this.getShipLocationColumn()] == '*') {
 				this.gameSpace[10 - 1 - i][this.getShipLocationColumn()] = ' ';
 				this.setPoints(this.getPoints() + 5);
+				this.asteroidsOnTheField -= 1;
+				this.totalAsteroidsDestroyed++;
+				System.out.println(this.asteroidsOnTheField);
 				break;
 			}
 		}
