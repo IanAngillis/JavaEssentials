@@ -194,7 +194,7 @@ public class Game {
 		}
 		
 		this.asteroidsOnTheField += asteroidsOnCurrentRow;
-		System.out.println(this.asteroidsOnTheField);
+		
 	}
 
 	private void addAsteroidsToCurrentRow(int row, int[] asteroidPositions) {
