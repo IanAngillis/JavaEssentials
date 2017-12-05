@@ -1,8 +1,0 @@
-package be.pxl.h8.oef1;
-
-public class Persoon {
-	public String voornaam;
-	public String naam;
-	public double lengte;
-	public double gewicht;
-}
