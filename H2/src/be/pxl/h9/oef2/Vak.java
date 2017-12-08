@@ -63,5 +63,8 @@ public class Vak {
 		return studiepunten;
 	}
 	
+	public int getJaar() {
+		return (int)this.getCode().charAt(1);
+	}
 	
 }

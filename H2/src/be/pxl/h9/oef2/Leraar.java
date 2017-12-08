@@ -106,4 +106,5 @@ public class Leraar {
 			System.out.println(this.getVak(i).getCode() + "   " + this.getVak(i).getNaam() + "   "  + this.getVak(i).getAantalSTP());
 		}
 	}
+	
 }
