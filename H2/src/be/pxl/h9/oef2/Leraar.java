@@ -101,7 +101,7 @@ public class Leraar {
 	
 	public void print() {
 		System.out.println("Leraar " + this.getNaam() + " is aangesteld voor " + this.getAanstellingsPercentage() + "%");
-		System.out.println("De volgende vakken behoren tot het takenpakker:");
+		System.out.println("De volgende vakken behoren tot het takenpakket:");
 		for(int i = 0; i < this.aantalVakken; i++) {
 			System.out.println(this.getVak(i).getCode() + "   " + this.getVak(i).getNaam() + "   "  + this.getVak(i).getAantalSTP());
 		}
