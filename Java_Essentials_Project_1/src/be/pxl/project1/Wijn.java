@@ -63,9 +63,7 @@ public class Wijn {
 		double adviesPrijs = getBasisAdviesPrijs();
 		int ouderdom = getOuderdom();
 
-		
 		adviesPrijs += (ouderdom * 0.10);
-		
 
 		return adviesPrijs;
 	}
