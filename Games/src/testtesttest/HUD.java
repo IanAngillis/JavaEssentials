@@ -30,6 +30,10 @@ public class HUD {
 		
 		g.drawString("Score: " + this.score, 15, 64);
 		g.drawString("Level: " + this.level, 15, 80);
+		
+		if(HEALTH == 0.0) {
+			g.drawString("Je bent dood", 50, 100);
+		}
 	}
 	
 	public void setScore(int score) {
