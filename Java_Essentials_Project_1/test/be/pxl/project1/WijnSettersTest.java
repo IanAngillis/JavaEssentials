@@ -91,19 +91,19 @@ public class WijnSettersTest {
 	
 	@Test
 	public void testSetAlcoholPercentage() {
-		wijn.setAlcoholpercentage(15.3);
-		assertEquals(15.3, wijn.getAlcoholpercentage(), 0);
+		wijn.setAlcoholPercentage(15.3);
+		assertEquals(15.3, wijn.getAlcoholPercentage(), 0);
 	}
 	
 	@Test
 	public void testSetAlcoholPercentageNegatiefGeef0() {
-		wijn.setAlcoholpercentage(-1.0);
-		assertEquals(0.0, wijn.getAlcoholpercentage(), 0);
+		wijn.setAlcoholPercentage(-1.0);
+		assertEquals(0.0, wijn.getAlcoholPercentage(), 0);
 	}
 
 	@Test
 	public void testSetAlcoholPercentageBovenMaxGeeftMax() {
-		wijn.setAlcoholpercentage(17 + 0.1);
-		assertEquals(17, wijn.getAlcoholpercentage(), 0);
+		wijn.setAlcoholPercentage(Wijn.MAX_ALCOHOLPERCENTAGE + 0.1);
+		assertEquals(Wijn.MAX_ALCOHOLPERCENTAGE, wijn.getAlcoholPercentage(), 0);
 	}
 }

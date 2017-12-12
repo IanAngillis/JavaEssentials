@@ -14,7 +14,7 @@ public class WijnConstructorTest {
 		assertEquals("Wine Complet", wijn.getNaam());
 		assertEquals("Wit", wijn.getKleur());
 		assertEquals("Chili", wijn.getLand());
-		assertEquals(12.5, wijn.getAlcoholpercentage(), 0);
+		assertEquals(12.5, wijn.getAlcoholPercentage(), 0);
 		assertEquals(LocalDate.now().getYear() - 1, wijn.getJaargang());
 		assertNull(wijn.getOmschrijving());
 		assertNull(wijn.getRegio());
@@ -28,7 +28,7 @@ public class WijnConstructorTest {
 		assertEquals("Wine Complet", wijn.getNaam());
 		assertEquals("Wit", wijn.getKleur());
 		assertEquals("Chili", wijn.getLand());
-		assertEquals(13.5, wijn.getAlcoholpercentage(), 0);
+		assertEquals(13.5, wijn.getAlcoholPercentage(), 0);
 		assertEquals(2014, wijn.getJaargang());
 		assertNull(wijn.getOmschrijving());
 		assertNull(wijn.getRegio());
@@ -82,25 +82,25 @@ public class WijnConstructorTest {
 	@Test
 	public void testNegatiefAlcoholPercentageGeeft0() {
 		Wijn wijn = new Wijn("Wine Complet", "Rood", "Frankrijk", 2005, -3);
-		assertEquals(0, wijn.getAlcoholpercentage(), 0);
+		assertEquals(0, wijn.getAlcoholPercentage(), 0);
 	}
 	
 	@Test
 	public void testAlcolholPercentageBovenMaxGeeftMax() {
-		Wijn wijn = new Wijn("Wine Complet", "Rood", "Frankrijk", 2005, 17 + 0.1);
-		assertEquals(17, wijn.getAlcoholpercentage(), 0);
+		Wijn wijn = new Wijn("Wine Complet", "Rood", "Frankrijk", 2005, Wijn.MAX_ALCOHOLPERCENTAGE + 0.1);
+		assertEquals(Wijn.MAX_ALCOHOLPERCENTAGE, wijn.getAlcoholPercentage(), 0);
 	}
 	
 	@Test
 	public void testAlcolholPercentageMaxGeeftMax() {
-		Wijn wijn = new Wijn("Wine Complet", "Rood", "Frankrijk", 2005, 17);
-		assertEquals(17, wijn.getAlcoholpercentage(), 0);
+		Wijn wijn = new Wijn("Wine Complet", "Rood", "Frankrijk", 2005, Wijn.MAX_ALCOHOLPERCENTAGE);
+		assertEquals(Wijn.MAX_ALCOHOLPERCENTAGE, wijn.getAlcoholPercentage(), 0);
 	}
 	
 	@Test
 	public void testAlcolholPercentageTussen0EnMax() {
 		Wijn wijn = new Wijn("Wine Complet", "Rood", "Frankrijk", 2005, 12.5);
-		assertEquals(12.5, wijn.getAlcoholpercentage(), 0);
+		assertEquals(12.5, wijn.getAlcoholPercentage(), 0);
 	}
 	
 }

@@ -17,6 +17,7 @@ public class Wijn {
 	private String[] landen = { "Frankrijk", "Chili", "Italië", "Spanje" };
 	private String[] kleuren = { "Wit", "Rood", "Rosé" };
 	private double[] basisAdviesPrijzen = { 7.5, 8.25, 9.30, 6.45 };
+	public static final double MAX_ALCOHOLPERCENTAGE = 17;
 
 	// Constructors
 
@@ -35,7 +36,7 @@ public class Wijn {
 		this.setKleur(newKleur);
 		this.setLand(newLand);
 		this.setJaargang(jaargang);
-		this.setAlcoholpercentage(alcoholpercentage);
+		this.setAlcoholPercentage(alcoholpercentage);
 		this.setOmschrijving("");
 		this.setDruivenras("");
 		this.setRegio("");
@@ -211,15 +212,15 @@ public class Wijn {
 		this.serveerTip = serveertip;
 	}
 
-	public double getAlcoholpercentage() {
+	public double getAlcoholPercentage() {
 		return alcoholpercentage;
 	}
 
-	public void setAlcoholpercentage(double alcoholpercentage) {
+	public void setAlcoholPercentage(double alcoholpercentage) {
 
 		if (alcoholpercentage < 0) {
 			this.alcoholpercentage = 0;
-		} else if (alcoholpercentage > 17) {
+		} else if (alcoholpercentage > Wijn.MAX_ALCOHOLPERCENTAGE) {
 			this.alcoholpercentage = 17;
 		} else {
 			this.alcoholpercentage = alcoholpercentage;
