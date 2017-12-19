@@ -39,6 +39,11 @@ public class SpelEvaluatie {
 		
 	}
 	
+	public boolean equals(Score s) {
+		
+		return this.getScore().getStars().equals(s.getStars());
+	}
+	
 	public boolean isGeldig() {
 		if(this.getSpel() == null) {
 			return false;

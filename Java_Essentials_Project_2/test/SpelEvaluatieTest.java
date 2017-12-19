@@ -91,7 +91,6 @@ public class SpelEvaluatieTest {
         assertNull(evaluatie.getScore());
         evaluatie.maaktBeoordeling(5, "We hebben ontzettend veel gelachen.");
         assertNotNull(evaluatie.getScore());
-        assertEquals(new Score(5), evaluatie.getScore());
     }
 
     @Test
@@ -111,6 +110,5 @@ public class SpelEvaluatieTest {
         evaluatie.maaktBeoordeling(5, motivatie);
         evaluatie.maaktBeoordeling(3, "Niet erg spannend.");
         assertEquals(motivatie, evaluatie.getMotivatie());
-        assertEquals(new Score(5), evaluatie.getScore());
     }
 }
