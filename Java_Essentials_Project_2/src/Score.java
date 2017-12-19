@@ -39,6 +39,10 @@ public class Score {
 	}
 
 	public boolean equals(Score s) {
-		return this.getStars().equals(s.getStars());
+		if(s != null) {
+			return this.getStars().equals(s.getStars());
+		} else {
+			return false;
+		}
 	}
 }

@@ -33,7 +33,13 @@ public class Speler {
 	}
 
 	public void setGeboortejaar(int geboortejaar) {
-		this.geboortejaar = geboortejaar;
+		if(geboortejaar > LocalDate.now().getYear()) {
+			this.geboortejaar = 0;
+		} else if (geboortejaar < 1900) {
+			this.geboortejaar = 0;
+		} else {
+			this.geboortejaar = geboortejaar;
+		}
 	}
 	
 }

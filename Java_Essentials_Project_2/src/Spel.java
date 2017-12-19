@@ -9,7 +9,6 @@ public abstract class Spel {
 	public Spel(String newNaam, Uitgever newUitgever) {
 		this.setNaam(newNaam);
 		this.uitgever = newUitgever;
-		this.setMinimumLeeftijd(12);
 	}
 	
 	//Getters en setters
@@ -26,8 +25,8 @@ public abstract class Spel {
 	}
 
 	public void setMinimumLeeftijd(int leeftijd) {
-		if(leeftijd < this.getMinimumLeeftijd()) {
-			leeftijd = this.getMinimumLeeftijd();
+		if(leeftijd < 0) {
+			leeftijd = 12;
 		}
 		
 		this.minimumLeeftijd = leeftijd;

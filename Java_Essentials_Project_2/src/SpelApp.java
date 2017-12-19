@@ -44,7 +44,7 @@ public class SpelApp {
 		printInformatie(SpelEvaluatieArray);
 		
 		
-		
+		SpelEvaluatieArray[0].maaktBeoordeling(5,  "lol");
 		
 		keyboard.close();
 	}

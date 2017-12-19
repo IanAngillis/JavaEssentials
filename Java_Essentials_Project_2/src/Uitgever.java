@@ -30,7 +30,7 @@ public class Uitgever {
 	public void setJaarOprichting(int jaarOprichting) {
 
 		if (jaarOprichting > LocalDate.now().getYear()) {
-			this.jaarOprichting = LocalDate.now().getYear();
+			this.jaarOprichting = 0;
 		} else {
 			this.jaarOprichting = jaarOprichting;
 		}

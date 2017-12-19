@@ -1,11 +1,11 @@
 
-public class Bordspel extends Spel {
+public class BordSpel extends Spel {
 	
 	private int speelduur;
 	private int aantalSpelers;
 	
 	//Constructor
-	public Bordspel(String newNaam, Uitgever newUitgever) {
+	public BordSpel(String newNaam, Uitgever newUitgever) {
 		super(newNaam, newUitgever);
 		// TODO Auto-generated constructor stub
 	}

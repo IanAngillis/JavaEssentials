@@ -1,10 +1,9 @@
 
 public class SpelEvaluatie {
-	private String motivatie;
+	private String motivatie = null;
 	private Score score;
 	private Speler speler;
 	private Spel spel;
-	private int beoordelingsCount = 0;
 	
 	//Constructor
 	public SpelEvaluatie(Spel newSpel, Speler newSpeler) {
@@ -29,11 +28,13 @@ public class SpelEvaluatie {
 		return spel;
 	}
 	
-	public void maaktBeoordeling(int score, String motivatie){
-		if(beoordelingsCount == 0) {
+	public boolean maaktBeoordeling(int score, String motivatie){
+		if(this.getMotivatie() == null) {
 			this.score = new Score(score);
 			this.motivatie = motivatie;
-			beoordelingsCount++;
+			return true;
+		} else {
+			return false;
 		}
 		
 	}
