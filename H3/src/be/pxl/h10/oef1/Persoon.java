@@ -48,7 +48,7 @@ public class Persoon {
 	}
 
 	public void Print() {
-		System.out.println("Voornaam: " + this.getNaam());
+		System.out.println("Voornaam: " + this.getVoornaam());
 		System.out.println("Naam: " + this.getNaam());
 	}
 }
