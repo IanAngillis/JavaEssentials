@@ -1,5 +1,8 @@
 package be.pxl.h10.opdracht8_shapes;
 
+import java.awt.Rectangle;
+
+
 public class ShapeApp {
 
 	public static void main(String[] args) {
