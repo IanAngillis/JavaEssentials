@@ -16,6 +16,7 @@ public class ShapeApp {
 		System.out.println("Met tostring: " + c1.toString());
 		
 		System.out.println(c1.equals(c2));
+		
 	}
 
 }
