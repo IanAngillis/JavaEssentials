@@ -36,13 +36,11 @@ public class TshirtApp {
 
 			tsize = TshirtSize.getSize(borstomtrek);
 
-			System.out.println("Gewenste kleur (" + Kleur.ROOD.name() + "/" + Kleur.GROEN.name() + "/"
-					+ Kleur.BLAUW.name() + "/" + Kleur.WIT.name() + "): ");// enum opvragen
+			System.out.println("Gewenste kleur (" + getPossibleColors() + "): ");
 			kleur = keyboard.nextLine().toUpperCase();
 
 			while (!inputIsValid(kleur)) {
-				System.out.println("Gewenste kleur (" + Kleur.ROOD.name() + "/" + Kleur.GROEN.name() + "/"
-						+ Kleur.BLAUW.name() + "/" + Kleur.WIT.name() + "): ");
+				System.out.println("Gewenste kleur (" + getPossibleColors() + "): ");
 				kleur = keyboard.nextLine().toUpperCase();
 			}
 
@@ -59,6 +57,7 @@ public class TshirtApp {
 		}
 
 		printShirtList(shirtList);
+		
 		System.out.println();
 		System.out.println("De kleur " + getMeestBesteldeKleur(shirtList).name() + " werd het meeste besteld.");
 		System.out.println("De maat " + getMinstBesteldeMaat(shirtList).name() + " werd het minst besteld.");
@@ -100,14 +99,13 @@ public class TshirtApp {
 	}
 
 	public static boolean inputIsValid(String inputkleur) {
-		String[] kleuren = { "ROOD", "GROEN", "BLAUW", "WIT" };// enum gebruiken
-
-		for (String kleur : kleuren) {
-			if (kleur.equals(inputkleur)) {
+		
+		for(Kleur k : Kleur.values()) {
+			if(k.name().equals(inputkleur)) {
 				return true;
 			}
 		}
-
+		
 		return false;
 
 	}
@@ -193,6 +191,17 @@ public class TshirtApp {
 		}
 
 		return minsteSize;
+	}
+	
+	public static String getPossibleColors() {
+		StringBuilder temp = new StringBuilder("");
+		
+		for(Kleur k : Kleur.values()) {
+			temp.append(k.name() + "/");
+		}
+		
+		temp = temp.deleteCharAt(temp.length() - 1);
+		return temp.toString();
 	}
 
 }
