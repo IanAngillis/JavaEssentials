@@ -1,5 +1,8 @@
 
+import java.time.LocalDateTime;
+
 public class SpelEvaluatie {
+	private LocalDateTime tijdstip;
 	private String motivatie = null;
 	private Score score;
 	private Speler speler;
@@ -9,11 +12,16 @@ public class SpelEvaluatie {
 	public SpelEvaluatie(Spel newSpel, Speler newSpeler) {
 		this.spel = newSpel;
 		this.speler = newSpeler;
+		this.tijdstip = LocalDateTime.now();
 	}
 
 	// Getters en Setters
 	public String getMotivatie() {
 		return motivatie;
+	}
+	
+	public LocalDateTime getTijdstip() {
+		return this.tijdstip;
 	}
 
 	public Score getScore() {

@@ -1,4 +1,5 @@
 
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class SpelApp {
@@ -6,13 +7,13 @@ public class SpelApp {
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
 		int aantalSpelers;
-		int geboorteJaarSpeler;
+		String geboorteJaarSpeler;
 		int score;
 		String spelersNaam = new String("");
 		String beoordeling = new String("");
 		SpelEvaluatie [] SpelEvaluatieArray;
 		
-		OnlineSpel spel = new OnlineSpel("Total War", new Uitgever("The Creative Assembly", "Horsham", 1987));
+		OnlineSpel spel = new OnlineSpel("Total War", new Uitgever("The Creative Assembly", "Horsham", 1987, 5, 24));
 		
 		System.out.println(spel.toString());
 		
@@ -27,8 +28,8 @@ public class SpelApp {
 			System.out.println("Geef een speler naam: ");
 			spelersNaam = keyboard.nextLine();
 			
-			System.out.println("Geef geboortejaar");
-			geboorteJaarSpeler = keyboard.nextInt();
+			System.out.println("Geef Geboortedatum (dd-MM-yyyy):");
+			geboorteJaarSpeler = keyboard.nextLine();
 						
 			System.out.println("Geef score (0-5):");
 			score = keyboard.nextInt();
@@ -50,11 +51,12 @@ public class SpelApp {
 	}
 	
 	public static void printInformatie(SpelEvaluatie [] SpelEvaluatieArray) {
+		DateTimeFormatter outputFormat = DateTimeFormatter.ofPattern("HH:mm");
 		Score [] scoreArray = new Score [SpelEvaluatieArray.length];
 		System.out.println("Evaluatie " + SpelEvaluatieArray[0].getSpel().getNaam());
 		
 		for(int i = 0; i < SpelEvaluatieArray.length; i++) {
-			System.out.printf("%-20s %-5s %-20s %c\n", SpelEvaluatieArray[i].getSpeler().getNaam(), SpelEvaluatieArray[i].getScore().getStars(), SpelEvaluatieArray[i].getMotivatie(), getCharacter(SpelEvaluatieArray[i]));
+			System.out.printf("%s %-20s %-5s %-20s %c\n", SpelEvaluatieArray[i].getTijdstip().format(outputFormat) ,SpelEvaluatieArray[i].getSpeler().getNaam(), SpelEvaluatieArray[i].getScore().getStars(), SpelEvaluatieArray[i].getMotivatie(), getCharacter(SpelEvaluatieArray[i]));
 			scoreArray[i] = SpelEvaluatieArray[i].getScore();
 		}
 		

@@ -92,9 +92,10 @@ public class H12Oef1 {
 
 	}
 
-	private static int getAantalCijfersNaKomma(double x) {
+	private static int getAantalCijfersNaKomma(double x) { //Met substring
 		
 		String value = x + "";
+		System.out.println(value);
 		int teller = 0;
 		boolean kommaHasPassed = false;
 		
@@ -102,6 +103,7 @@ public class H12Oef1 {
 			
 			if(value.charAt(i) == '.') {
 				kommaHasPassed = true;
+				continue;
 			}
 			
 			if(kommaHasPassed) {

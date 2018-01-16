@@ -1,21 +1,22 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Speler {
 	private String naam;
-	private int geboortejaar;
+	private LocalDate geboorteDatum;
 	
 	//Constructor
-	Speler(String newNaam, int newGeboortejaar){
+	Speler(String newNaam, String geboorteDatum){
 		this.setNaam(newNaam);
-		this.setGeboortejaar(newGeboortejaar);
+		this.setGeboortejaar(geboorteDatum);
 	}
 	
 	//methoden
 	public  int getLeeftijd() {
-		if(this.getGeboortejaar() == 0) {
+		if(this.getGeboorteDatum() == null) {
 			return -1;
 		} else {
-			return LocalDate.now().getYear() - this.getGeboortejaar();
+			return LocalDate.now().getYear() - this.getGeboorteDatum().getYear();
 		}
 	}
 	
@@ -28,18 +29,20 @@ public class Speler {
 		this.naam = naam;
 	}
 
-	public int getGeboortejaar() {
-		return geboortejaar;
+	public LocalDate getGeboorteDatum() {
+		return geboorteDatum;
 	}
 
-	public void setGeboortejaar(int geboortejaar) {
-		if(geboortejaar > LocalDate.now().getYear()) {
-			this.geboortejaar = 0;
-		} else if (geboortejaar < 1900) {
-			this.geboortejaar = 0;
+	public void setGeboortejaar(String geboorteDatum) {
+		DateTimeFormatter inputFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		LocalDate temp = LocalDate.parse(geboorteDatum, inputFormat);
+		
+		if(temp.getYear() > LocalDate.now().getYear()) {
+			this.geboorteDatum = null;
+		} else if (temp.getYear() < 1900) {
+			this.geboorteDatum = null;
 		} else {
-			this.geboortejaar = geboortejaar;
+			this.geboorteDatum = temp;
 		}
 	}
-	
 }

@@ -1,6 +1,7 @@
 package be.pxl.h12.oef3;
 
 import java.time.*;
+import java.time.temporal.ChronoUnit;
 
 public class Huwelijk {
 	private Persoon partner1;
@@ -59,25 +60,18 @@ public class Huwelijk {
 		return LocalDate.now().getYear() - this.getHuwelijksdatum().getYear();
 	}
 
-	public void printFeest() {
+	public void printFeest() { 
 		int huwelijksCode = (this.getAantalJaarGetrouwd() / 10) + 1;
-		int aantalDagen = 0;;
 		LocalDate temp = this.getHuwelijksdatum();
-		LocalDate temp2 = LocalDate.now();
 
 		temp = temp.plusYears(huwelijksCode * 10);
 		System.out.println("op " + temp.getDayOfMonth() + " " + temp.getMonth().toString().toLowerCase() + " " + temp.getYear() + " vieren ze hun "
 				+ getSoortHuwelijksFeest(huwelijksCode) + " bruiloft");
 		
-		
 		Period difference = Period.between(LocalDate.now(), temp);
-		while(!temp2.equals(temp)) {
-			
-			temp2 = temp2.plusDays(1);
-			aantalDagen++;
-		}
 		
-		System.out.println("Dit zijn nog " + aantalDagen + " dagen. Of nog " + difference.getYears() + " jaren " + difference.getMonths() + " maanden en " + difference.getDays() + " dagen");
+		
+		System.out.println("Dit zijn nog " + ChronoUnit.DAYS.between(LocalDate.now(), temp) + " dagen. Of nog " + difference.getYears() + " jaren " + difference.getMonths() + " maanden en " + difference.getDays() + " dagen");
 		
 
 	}

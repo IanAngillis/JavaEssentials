@@ -1,17 +1,25 @@
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Uitgever {
 	// Instantievariabelen
 	private String naam;
-	private int jaarOprichting;
+	private LocalDate datumOprichting;
 	private String hoofdkantoor;
 	private String website;
 
 	// Constructors
-	public Uitgever(String newNaam, String newHoofdkantoor, int newJaarOprichting) {
+	public Uitgever(String newNaam, String newHoofdkantoor, int newJaarOprichting, int maand, int dag) {
 		this.setNaam(newNaam);
 		this.setHoofdkantoor(newHoofdkantoor);
-		this.setJaarOprichting(newJaarOprichting);
+		this.setDatumOprichting(newJaarOprichting, maand, dag);
+	}
+	
+	public long getAantalMaandenVanafOprichting() {
+		
+		Period difference = Period.between(LocalDate.now(), this.getDatumOprichting());
+		
+		return difference.toTotalMonths();
 	}
 
 	// Getters en setters
@@ -23,16 +31,16 @@ public class Uitgever {
 		this.naam = naam;
 	}
 
-	public int getJaarOprichting() {
-		return jaarOprichting;
+	public LocalDate getDatumOprichting() {
+		return datumOprichting;
 	}
 
-	public void setJaarOprichting(int jaarOprichting) {
+	public void setDatumOprichting(int jaarOprichting, int maand, int dag) {
 
 		if (jaarOprichting > LocalDate.now().getYear()) {
-			this.jaarOprichting = 0;
+			this.datumOprichting = LocalDate.of(jaarOprichting, LocalDate.now().getMonthValue(), 1);
 		} else {
-			this.jaarOprichting = jaarOprichting;
+			this.datumOprichting = LocalDate.of(jaarOprichting, maand, dag);
 		}
 	}
 
@@ -54,7 +62,7 @@ public class Uitgever {
 
 	@Override
 	public String toString() {
-		return "Uitgever [naam=" + naam + ", jaarOprichting=" + jaarOprichting + ", hoofdkantoor=" + hoofdkantoor
+		return "Uitgever [naam=" + naam + ", jaarOprichting=" + datumOprichting.toString() + ", hoofdkantoor=" + hoofdkantoor
 				+ ", website=" + website + "]";
 	}
 
