@@ -31,4 +31,5 @@
 <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
 <fullyQualifiedTypeName name="java.time.LocalDate"/>
 <fullyQualifiedTypeName name="be.pxl.h13.exoef1.Doorloopbaar"/>
+<fullyQualifiedTypeName name="enums.UnitSize"/>
 </qualifiedTypeNameHistroy>
