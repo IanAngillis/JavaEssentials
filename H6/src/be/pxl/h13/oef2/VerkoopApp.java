@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class VerkoopApp {
 
 	public static void main(String[] args) {
-		TeVerkopenBouwGrond g = new TeVerkopenBouwGrond("12ER", 12.4);
+		TeVerkopenBouwGrond g = new TeVerkopenBouwGrond("12ER", 12.4, "Open bebouwing");
 		g.setBouwVoorschrift("Open Bebouwing");
 		g.wijsEenNotarisToe("Dirk Peeters", LocalDate.of(2016, 12, 7));
 		g.doeEenBod(150000, LocalDate.of(2016, 12, 23));

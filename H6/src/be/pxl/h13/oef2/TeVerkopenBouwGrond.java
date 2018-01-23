@@ -11,12 +11,10 @@ public class TeVerkopenBouwGrond extends BouwGrond {
 	private double hoogsteBod;
 	private LocalDate datumHoogsteBod;
 	
-	public TeVerkopenBouwGrond(String perceelNr, double PerceelGrootte) {
-		super(perceelNr, PerceelGrootte);
+	public TeVerkopenBouwGrond(String perceelNr, double PerceelGrootte, String bouwVoorschrift) {
+		super(perceelNr, PerceelGrootte, bouwVoorschrift);
 		// TODO Auto-generated constructor stub
 	}
-	
-	//Vragen stellen aan lector, Interface forceert methodes niet
 
 	public String getNotaris() {
 		return notaris;

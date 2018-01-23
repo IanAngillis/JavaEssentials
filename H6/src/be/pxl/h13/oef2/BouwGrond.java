@@ -7,9 +7,10 @@ public abstract class BouwGrond implements Verkoopbaar{
 	private String bouwVoorschrift;
 	
 	//Constructor
-	public BouwGrond(String perceelNr, double PerceelGrootte) {
+	public BouwGrond(String perceelNr, double perceelGrootte, String bouwVoorschrift) {
 		this.setPerceelNr(perceelNr);
-		this.setPerceelGrootte(PerceelGrootte);
+		this.setPerceelGrootte(perceelGrootte);
+		this.setBouwVoorschrift(bouwVoorschrift);
 		
 	}
 	
